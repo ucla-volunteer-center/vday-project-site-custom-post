@@ -12,11 +12,24 @@
 		register_post_type(
 			'project-site', 
 			array(
-				'label' => __('Project Sites'), 
+				'labels' => array(
+			       'name' => __( 'Project Sites' ),
+			       'singular_name' => __( 'Project Sites' ),
+			       'add_new' => __( 'Add Project Site' ),
+			       'add_new_item' => __( 'Add Project Site' ),
+			       'edit_item' => __( 'Edit Project Site' ),
+			       'new_item' => __( 'Add Project Site' ),
+			       'view_item' => __( 'View Project Site' ),
+			       'search_items' => __( 'Search Project Sites' ),
+			       'not_found' => __( 'No Project Sites found' ),
+			       'not_found_in_trash' => __( 'No Project Sites found in trash' )
+			   ),
 				'public' => true, 
 				'show_ui' => true,
 				'exclude_from_search' => false,
 				'hierarchical' => true,
+				'capability_type' => 'post',
+				'has_archive' => false,
 				'supports' => array(
 					'title',
 					'editor',
@@ -34,6 +47,8 @@
 	            'hierarchical' => true,
 	        )
 	    );
+
+	    flush_rewrite_rules();
 
 
 	}

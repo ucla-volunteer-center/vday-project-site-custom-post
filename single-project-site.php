@@ -4,7 +4,9 @@
  */ ?>
 <?php get_header();?>
 
-
+<script>
+	console.log("loaded");
+</script>
 <div class="container pt-5 pb-5">
 
 	template loaded
